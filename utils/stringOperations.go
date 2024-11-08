@@ -1,6 +1,9 @@
 package util
 
-import "strconv"
+import (
+	"strconv"
+	"unicode"
+)
 
 // Converts a string to int
 func MustAtoI(str string) int {
@@ -11,12 +14,10 @@ func MustAtoI(str string) int {
 	return result
 }
 
-// Converts a slice of strings to slice to integers
-func StingsToInt(strs []string) []int {
-	ints := make([]int, len(strs))
+func IntToString(number int) string {
+	return strconv.Itoa(number)
+}
 
-	for idx, val := range strs {
-		ints[idx] = MustAtoI(val)
-	}
-	return ints
+func IsDigit(ch rune) bool {
+	return unicode.IsDigit(ch)
 }
