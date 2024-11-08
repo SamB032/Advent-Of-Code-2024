@@ -27,10 +27,10 @@ func ArrayReduce[I any](arr []I, f func(I, I) I, initialValue I) I {
 
 //Map values of an array to a new value and type
 func ArrayMap[I any, O any](arr []I, f func(I) O) []O {
-  var mappedArray []O
+  var mappedArray []O = make([]O, len(arr))
 
-  for _, value := range arr {
-    mappedArray = append(mappedArray, f(value))
+  for i, value := range arr {
+    mappedArray[i] = f(value)
   }
   
   return mappedArray
