@@ -1,0 +1,53 @@
+package day1
+
+import (
+
+	"fmt"
+	util "github.com/SamB032/Advent-Of-Code-2024/utils"
+)
+
+//Split the file into a 2d array
+func ParseIntoArray(content []string) ([]int, []int) {
+	var leftArray []int
+	var rightArray []int
+
+	//Loop line by line, adding items to left and right arrays 
+	for _, line := range content {
+		leftVal := util.MustAtoI(string(line[0]))
+		leftArray = append(leftArray, leftVal)
+
+		rightVal := util.MustAtoI(string(line[len(line) - 1]))
+		rightArray = append(rightArray, rightVal)
+	}
+	return leftArray, rightArray
+}
+
+// Loops through and finds the difference between to minimum array and removes them
+func CalculateMinsSum(leftArray []int, rightArray []int) int {
+	if len(leftArray) != len(rightArray) {
+		panic("LeftArray and RigthArray are not the same size")
+	}
+
+	var diffMinSum int
+
+	for len(leftArray) > 0 && len(rightArray) > 0 {
+		fmt.Println(leftArray, rightArray)
+
+		minLeftIndex, minLeftVal := util.MinIndex(leftArray)
+		minRightIndex, minRightVal := util.MinIndex(rightArray)
+
+		// Add to the sum
+		diffMinSum += minRightVal - minLeftVal
+
+		// Remove the values
+		leftArray = util.RemoveIndex(leftArray, minLeftIndex)
+		rightArray = util.RemoveIndex(rightArray, minRightIndex)
+	}
+
+	return diffMinSum
+}
+
+func Day1Challenge1(input []string) int {
+	leftArray, rightArray := ParseIntoArray(input)
+	return CalculateMinsSum(leftArray, rightArray)
+}

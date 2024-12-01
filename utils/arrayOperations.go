@@ -1,6 +1,9 @@
 package util
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
 //Filters an array keeping values where the function applied to the values is true
 func ArrayFilter[I any](arr []I, f func(I) bool) []I {
@@ -65,4 +68,24 @@ func MinMax[I Number](arr []I) (I, I) {
   }
   
   return minValue, maxValue
+}
+
+// Return the index and value of the minimum in the array
+func MinIndex(arr []int) (int, int) {
+  var minIndex int = 0
+  var minVal int = math.MaxInt
+
+  for i, val := range arr {
+    //Update the min value and index with new min
+    if val < minVal {
+      minIndex = i
+      minVal = val
+    }
+  }
+  return minIndex, minVal
+}
+
+//Removes an index from an array
+func RemoveIndex[I any](slice []I, index int) []I {
+    return append(slice[:index], slice[index+1:]...)
 }
