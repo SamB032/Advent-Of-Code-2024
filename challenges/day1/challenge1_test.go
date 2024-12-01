@@ -9,9 +9,9 @@ import (
 func TestDay1Challenge1(t *testing.T) {
 	input := util.ReadFile("input.txt")
 
-  got := Day1Challenge1(input)
+	got := Day1Challenge1(input)
 
-  if got != 11 {
-    t.Errorf("Day1Challenge1 is incorret. Got: %d, Want: %d", got, 11)
-  }
+	if got != 11 {
+		t.Errorf("Day1Challenge1 is incorret. Got: %d, Want: %d", got, 11)
+	}
 }

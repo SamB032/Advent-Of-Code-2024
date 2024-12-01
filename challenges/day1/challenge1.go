@@ -1,8 +1,8 @@
 package day1
 
 import (
-	"sort"
 	"math"
+	"sort"
 	"strings"
 
 	util "github.com/SamB032/Advent-Of-Code-2024/utils"
@@ -13,7 +13,7 @@ func ParseIntoArray(content []string) ([]int, []int) {
 	var leftArray []int
 	var rightArray []int
 
-	//Loop line by line, adding items to left and right arrays 
+	//Loop line by line, adding items to left and right arrays
 	for _, line := range content {
 		parts := strings.Fields(line) // Split the line into fields by whitespace.
 		if len(parts) != 2 {
