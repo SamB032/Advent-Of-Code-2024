@@ -1,8 +1,8 @@
 package util
 
 import (
-	"fmt"
 	"math"
+	"fmt"
 )
 
 //Filters an array keeping values where the function applied to the values is true
@@ -87,5 +87,9 @@ func MinIndex(arr []int) (int, int) {
 
 //Removes an index from an array
 func RemoveIndex[I any](slice []I, index int) []I {
+	if index < 0 || index >= len(slice) {
+		fmt.Printf("Index %d out of bounds for slice: %v\n", index, slice)
+		return slice
+	}
 	return append(slice[:index], slice[index+1:]...)
 }
