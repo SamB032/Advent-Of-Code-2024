@@ -5,7 +5,7 @@ import (
 	"math"
 )
 
-//Filters an array keeping values where the function applied to the values is true
+// Filters an array keeping values where the function applied to the values is true
 func ArrayFilter[I any](arr []I, f func(I) bool) []I {
 	var filteredArr []I
 
@@ -17,7 +17,7 @@ func ArrayFilter[I any](arr []I, f func(I) bool) []I {
 	return filteredArr
 }
 
-//Reduce the array to a single value
+// Reduce the array to a single value
 func ArrayReduce[I any](arr []I, f func(I, I) I, initialValue I) I {
 	var result = initialValue
 
@@ -28,7 +28,7 @@ func ArrayReduce[I any](arr []I, f func(I, I) I, initialValue I) I {
 	return result
 }
 
-//Map values of an array to a new value and type
+// Map values of an array to a new value and type
 func ArrayMap[I any, O any](arr []I, f func(I) O) []O {
 	var mappedArray []O = make([]O, len(arr))
 
@@ -85,7 +85,11 @@ func MinIndex(arr []int) (int, int) {
 	return minIndex, minVal
 }
 
-//Removes an index from an array
+// Removes an index from an array
 func RemoveIndex[I any](slice []I, index int) []I {
+	if index < 0 || index >= len(slice) {
+		fmt.Printf("Index %d out of bounds for slice: %v\n", index, slice)
+		return slice
+	}
 	return append(slice[:index], slice[index+1:]...)
 }
