@@ -61,7 +61,7 @@ func Day2Challenge1(input []string) int {
 	trendOfLevels := util.ArrayMap(parsedInputs, isIncreasingDecreasing)
 
 	//Array only contain true occurences
-	postitiveNegativeTrends := util.ArrayFilter(trendOfLevels, func(a bool) bool { return a == true })
+	postitiveNegativeTrends := util.ArrayFilter(trendOfLevels, func(a bool) bool { return a })
 
 	return len(postitiveNegativeTrends)
 }
