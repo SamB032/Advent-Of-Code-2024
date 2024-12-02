@@ -8,7 +8,7 @@ import (
 	util "github.com/SamB032/Advent-Of-Code-2024/utils"
 )
 
-//Split the file into a 2d array
+// Split the file into a 2d array
 func ParseIntoArray(content []string) ([]int, []int) {
 	var leftArray []int
 	var rightArray []int
