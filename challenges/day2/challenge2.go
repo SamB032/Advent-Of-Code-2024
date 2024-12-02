@@ -4,7 +4,7 @@ import (
 	util "github.com/SamB032/Advent-Of-Code-2024/utils"
 )
 
-//For some reason, removing an index does not work, so result to a function to manually copy it
+// For some reason, removing an index does not work, so result to a function to manually copy it
 func CopyArrayWithoutIndex(input []int, index int) []int {
 	var output []int
 
@@ -16,7 +16,7 @@ func CopyArrayWithoutIndex(input []int, index int) []int {
 	return output
 }
 
-//Returns true if the array is increasing or decreasing (diff by 3)
+// Returns true if the array is increasing or decreasing (diff by 3)
 func isIncreasingDecreasingTollerance(arr []int) bool {
 	//Return true if it is already increasing or decreasing
 	if isIncreasingDecreasing(arr) {
@@ -41,7 +41,7 @@ func Day2Challenge2(input []string) int {
 	trendOfLevels := util.ArrayMap(parsedInputs, isIncreasingDecreasingTollerance)
 
 	//Array only contain true occurences
-	postitiveNegativeTrends := util.ArrayFilter(trendOfLevels, func(a bool) bool { return a == true })
+	postitiveNegativeTrends := util.ArrayFilter(trendOfLevels, func(a bool) bool { return a })
 
 	return len(postitiveNegativeTrends)
 }

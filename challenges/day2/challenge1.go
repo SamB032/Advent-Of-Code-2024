@@ -8,7 +8,7 @@ import (
 	util "github.com/SamB032/Advent-Of-Code-2024/utils"
 )
 
-//Returns true if the array is increasing or decreasing (diff by 3)
+// Returns true if the array is increasing or decreasing (diff by 3)
 func isIncreasingDecreasing(arr []int) bool {
 	if len(arr) <= 2 {
 		return false
