@@ -9,7 +9,7 @@ import (
 
 func TestDay3Challenge1(t *testing.T) {
 	input := util.ReadFile("input.txt")
-  inputJoined := strings.Join(input, "")
+	inputJoined := strings.Join(input, "")
 
 	got := Day3Challenge1(inputJoined)
 
