@@ -15,6 +15,7 @@ func ExtractAndSumMultiplications(input string) int {
   sum := 0 
 
   for _, match := range matches {
+    // Extract the two numbers and multiply them
     x := util.MustAtoI(string(match[1]))
     y := util.MustAtoI(string(match[2]))
     sum += x * y

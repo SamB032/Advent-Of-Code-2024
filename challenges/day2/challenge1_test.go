@@ -12,6 +12,6 @@ func TestDay2Challenge1(t *testing.T) {
 	got := Day2Challenge1(input)
 
 	if got != 2 {
-		t.Errorf("Day2Challenge1 is incorret. Got: %d, Want: %d", got, 2)
+		t.Errorf("Day2Challenge1 is incorrect. Got: %d, Want: %d", got, 2)
 	}
 }
