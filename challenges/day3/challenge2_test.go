@@ -4,16 +4,16 @@ import (
 	"strings"
 	"testing"
 
-	util "github.com/SamB032/Advent-Of-Code-2024/utils"
+	util "github.com/samb032/advent-of-code-2024/utils"
 )
 
-func TestDay3Challenge2(t *testing.T) {
-	input := util.ReadFile("input.txt")
+func TestDay3challenge2(t *testing.T) {
+	input := util.readfile("input.txt")
 	inputJoined := strings.Join(input, "")
 
 	got := Day3Challenge2(inputJoined)
 
 	if got != 48 {
-		t.Errorf("Day3Challenge2 is incorrect. Got: %d, Want: %d", got, 48)
+		t.Errorf("Day3challenge2 is incorrect. got: %d, want: %d", got, 48)
 	}
 }
