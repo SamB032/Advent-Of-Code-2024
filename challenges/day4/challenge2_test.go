@@ -6,7 +6,7 @@ import (
 	util "github.com/SamB032/Advent-Of-Code-2024/utils"
 )
 
-func TestDay4Challenge1(t *testing.T) {
+func TestDay4challenge2(t *testing.T) {
 	input := util.ReadFile("input.txt")
 
 	runes := make([][]rune, len(input))
@@ -14,9 +14,9 @@ func TestDay4Challenge1(t *testing.T) {
 		runes[i] = []rune(val)
 	}
 
-	got := Day4Challenge1(runes)
+	got := Day4Challenge2(runes)
 
-	if got != 18 {
-		t.Errorf("Day4Challenge1 is incorrect. Got: %d, Want: %d", got, 18)
+	if got != 9 {
+		t.Errorf("Day4challenge2 is incorrect. got: %d, want: %d", got, 9)
 	}
 }
