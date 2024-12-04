@@ -14,6 +14,6 @@ func TestDay3challenge2(t *testing.T) {
 	got := Day3Challenge2(inputJoined)
 
 	if got != 48 {
-		t.errorf("Day3challenge2 is incorrect. got: %d, want: %d", got, 48)
+		t.Errorf("Day3challenge2 is incorrect. got: %d, want: %d", got, 48)
 	}
 }
