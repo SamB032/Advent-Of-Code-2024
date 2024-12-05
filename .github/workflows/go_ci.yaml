@@ -40,3 +40,11 @@ jobs:
         with:
           version: ${{ env.GOLANGCI_LINT_VERSION }}
           working-directory: ${{ matrix.modules }}
+      - name: Install dependencies
+        run: go mod tidy
+      - name: Run go test
+        run: |
+          for module in ${{ matrix.modules }}; do
+            echo "Running tests for module $module"
+            cd $module && go test ./... -cover
+          done
