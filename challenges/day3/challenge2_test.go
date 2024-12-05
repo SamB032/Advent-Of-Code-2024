@@ -4,11 +4,11 @@ import (
 	"strings"
 	"testing"
 
-	util "github.com/samb032/advent-of-code-2024/utils"
+	util "github.com/SamB032/Advent-Of-Code-2024/utils"
 )
 
 func TestDay3challenge2(t *testing.T) {
-	input := util.readfile("input.txt")
+	input := util.ReadFile("input.txt")
 	inputJoined := strings.Join(input, "")
 
 	got := Day3Challenge2(inputJoined)
