@@ -61,23 +61,22 @@ func UpdateIsInOrder(update []int, orderings []*Ordering) bool {
 		pageIndex[page] = i
 	}
 
-
 	// Check each ordering rule
 	for _, rule := range orderings {
-			firstIndex, firstExists := pageIndex[rule.First]
-			secondIndex, secondExists := pageIndex[rule.Second]
+		firstIndex, firstExists := pageIndex[rule.First]
+		secondIndex, secondExists := pageIndex[rule.Second]
 
-			// If both pages exist in the update, validate their order
-			if firstExists && secondExists && firstIndex >= secondIndex {
-					return false // Rule violated
-			}
+		// If both pages exist in the update, validate their order
+		if firstExists && secondExists && firstIndex >= secondIndex {
+			return false // Rule violated
+		}
 	}
 
 	return true
 }
 
 func GetMiddleOfArray(arr []int) int {
-	return arr[int(len(arr) / 2)]
+	return arr[int(len(arr)/2)]
 }
 
 func Day5Challenge1(input []string) int {
