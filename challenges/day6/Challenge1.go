@@ -36,7 +36,7 @@ func Day6Challenge1(input [][]rune) int {
   visited[fmt.Sprintf("%d,%d", guard_x, guard_y)] = true
 
 	//Walk the path of the gaurd
-	for true {
+	for {
 		// Get the next position of the guard
 		delta_x := Directions[directionIndex][0]
 		delta_y := Directions[directionIndex][1]
