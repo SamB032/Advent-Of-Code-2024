@@ -32,8 +32,8 @@ func Day6Challenge1(input [][]rune) int {
 
 	// Keep track of what the guard has visited
 	directionIndex := 0
-  visited := make(map[string]bool)
-  visited[fmt.Sprintf("%d,%d", guard_x, guard_y)] = true
+	visited := make(map[string]bool)
+	visited[fmt.Sprintf("%d,%d", guard_x, guard_y)] = true
 
 	//Walk the path of the gaurd
 	for {
@@ -58,10 +58,10 @@ func Day6Challenge1(input [][]rune) int {
 		// update position and visited
 		guard_x = next_x
 		guard_y = next_y
-    position := fmt.Sprintf("%d,%d", guard_x, guard_y)
-    if !visited[position] {
+		position := fmt.Sprintf("%d,%d", guard_x, guard_y)
+		if !visited[position] {
 			visited[position] = true
 		}
 	}
-  return len(visited)
+	return len(visited)
 }
