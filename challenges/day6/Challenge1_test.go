@@ -1,9 +1,9 @@
 package day6
 
 import (
-  "testing"
+	"testing"
 
-  util "github.com/SamB032/Advent-Of-Code-2024/utils"
+	util "github.com/SamB032/Advent-Of-Code-2024/utils"
 )
 
 func TestDay6Challenge1(t *testing.T) {
