@@ -5,13 +5,13 @@ type Queue struct {
 	Size int
 }
 
-//Adds the item to the top of the array
+// Adds the item to the top of the array
 func (queue *Queue) Push(element int) {
 	queue.Arr = append(queue.Arr, element)
 	queue.Size++
 }
 
-//Removes the item in the first
+// Removes the item in the first
 func (queue *Queue) Pop() int {
 	if queue.Size <= 0 {
 		return 0
