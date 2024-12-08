@@ -13,15 +13,15 @@ func Day8Challenge2(input [][]rune) int {
 		// Loop through each pair of antennas and calculate the antiNodes
 		for a := 0; a < len(locs)-1; a++ {
 			for b := a + 1; b < len(locs); b++ {
-				delta := util.Point[int]{locs[b].X - locs[a].X, locs[b].Y - locs[a].Y}
+				delta := util.Point[int]{X: locs[b].X - locs[a].X, Y: locs[b].Y - locs[a].Y}
 
 				outOfBounds := 0
 				for period := 0; outOfBounds < 2; period++ {
 					outOfBounds = 0
 
 					// Create corrdinates the possible anti nodes
-					anti1 := util.Point[int]{locs[a].X - period*delta.X, locs[a].Y - period*delta.Y}
-					anti2 := util.Point[int]{locs[b].X + period*delta.X, locs[b].Y + period*delta.Y}
+					anti1 := util.Point[int]{X: locs[a].X - period*delta.X, Y: locs[a].Y - period*delta.Y}
+					anti2 := util.Point[int]{X: locs[b].X + period*delta.X, Y: locs[b].Y + period*delta.Y}
 
 					if anti1.X >= 0 && anti1.X < 50 && anti1.Y >= 0 && anti1.Y < 50 {
 						antiNodes[anti1] = struct{}{}

@@ -13,7 +13,7 @@ func ParseInput(input [][]rune) map[rune][]util.Point[int] {
 			if ch == '.' {
 				continue
 			}
-			freqs[ch] = append(freqs[ch], util.Point[int]{i + 1, j})
+			freqs[ch] = append(freqs[ch], util.Point[int]{X: i + 1,Y: j})
 		}
 	}
 	return freqs
@@ -28,11 +28,11 @@ func Day8Challenge1(input [][]rune) int {
 		// Loop through each pair of antennas and calculate the antiNodes
 		for a := 0; a < len(locs)-1; a++ {
 			for b := a + 1; b < len(locs); b++ {
-				delta := util.Point[int]{locs[b].X - locs[a].X, locs[b].Y - locs[a].Y}
+				delta := util.Point[int]{X: locs[b].X - locs[a].X, Y: locs[b].Y - locs[a].Y}
 
 				// Create corrdinates the possible anti nodes
-				anti1 := util.Point[int]{locs[a].X - delta.X, locs[a].Y - delta.Y}
-				anti2 := util.Point[int]{locs[b].X + delta.X, locs[b].Y + delta.Y}
+				anti1 := util.Point[int]{X: locs[a].X - delta.X, Y: locs[a].Y - delta.Y}
+				anti2 := util.Point[int]{X: locs[b].X + delta.X, Y: locs[b].Y + delta.Y}
 
 				if anti1.X >= 0 && anti1.X < 50 && anti1.Y >= 0 && anti1.Y < 50 {
 					antiNodes[anti1] = struct{}{}
