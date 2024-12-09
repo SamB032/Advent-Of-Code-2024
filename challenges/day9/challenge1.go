@@ -1,7 +1,6 @@
 package day9
 
 const emptyBlock = '.'
-const amphipodBlockLength = 5
 
 // Generate a rune array of a specific length
 func GenerateRuneArray(ch rune, length int) []rune {
@@ -71,11 +70,9 @@ func CompactId(input []rune) []rune {
 			break
 		}
 
-		// Make the swap
-		temp := tempInput[firstEmptyIndex]
+		// Make the swap, loss is ok
 		tempInput[firstEmptyIndex] = tempInput[lastCharacterIndex]
-		tempInput[lastCharacterIndex] = temp
-
+		tempInput[lastCharacterIndex] = emptyBlock
 		counter++
 
 		// If counter is a Modulo of 5, save the tempInput into input
