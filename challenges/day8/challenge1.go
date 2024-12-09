@@ -13,7 +13,7 @@ func ParseInput(input [][]rune) map[rune][]util.Point[int] {
 			if ch == '.' {
 				continue
 			}
-			freqs[ch] = append(freqs[ch], util.Point[int]{X: i + 1,Y: j})
+			freqs[ch] = append(freqs[ch], util.Point[int]{X: i + 1, Y: j})
 		}
 	}
 	return freqs
