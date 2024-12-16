@@ -3,7 +3,6 @@ package day16
 import (
 	"container/heap"
 	"fmt"
-	"os"
 
 	util "github.com/SamB032/Advent-Of-Code-2024/utils"
 )
