@@ -1,9 +1,6 @@
 package day10
 
 import (
-	"fmt"
-	"os"
-
 	util "github.com/SamB032/Advent-Of-Code-2024/utils"
 )
 
