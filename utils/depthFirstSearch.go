@@ -16,8 +16,8 @@ func (stack *Stack[T]) Pop() *T {
 	if stack.Size <= 0 {
 		panic("stack Empty")
 	}
-	element := stack.Arr[stack.Size - 1] // Get the last element
-	stack.Arr = RemoveIndex(stack.Arr, stack.Size - 1)
+	element := stack.Arr[stack.Size-1] // Get the last element
+	stack.Arr = RemoveIndex(stack.Arr, stack.Size-1)
 	stack.Size--
 	return element
 }
