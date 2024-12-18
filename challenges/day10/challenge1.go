@@ -49,7 +49,7 @@ func DepthFirstSearch(input *[][]rune, zeroPos *util.Point[int]) int {
 
 	//Create a stack with starting Zeros
 	stack := util.Stack[util.Point[int]]{
-		Arr: []*util.Point[int]{zeroPos},
+		Arr:  []*util.Point[int]{zeroPos},
 		Size: 1,
 	}
 
@@ -82,5 +82,5 @@ func Day10Challenge1(input [][]rune) int {
 	for _, zero := range zeroPos {
 		totalScore += DepthFirstSearch(&input, zero)
 	}
-	return totalScore 
+	return totalScore
 }

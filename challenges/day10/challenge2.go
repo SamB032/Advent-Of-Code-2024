@@ -5,11 +5,11 @@ import (
 )
 
 func DepthFirstSearchForRating(input *[][]rune, zeroPos *util.Point[int], visitedMap map[util.Point[int]]bool) int {
-  uniqueTrails := 0
+	uniqueTrails := 0
 
 	//Create a stack with starting Zeros
 	stack := util.Stack[util.Point[int]]{
-		Arr: []*util.Point[int]{zeroPos},
+		Arr:  []*util.Point[int]{zeroPos},
 		Size: 1,
 	}
 
@@ -18,7 +18,7 @@ func DepthFirstSearchForRating(input *[][]rune, zeroPos *util.Point[int], visite
 		visitedMap[*currentNode] = true
 
 		if (*input)[currentNode.X][currentNode.Y] == '9' {
-      uniqueTrails++
+			uniqueTrails++
 			continue
 		}
 
@@ -26,7 +26,7 @@ func DepthFirstSearchForRating(input *[][]rune, zeroPos *util.Point[int], visite
 
 		// Add the neighbours in
 		for _, neighbour := range neighbours {
-      stack.Push(neighbour)
+			stack.Push(neighbour)
 		}
 	}
 	return uniqueTrails
@@ -34,7 +34,7 @@ func DepthFirstSearchForRating(input *[][]rune, zeroPos *util.Point[int], visite
 
 func Day10Challenge2(input [][]rune) int {
 	zeroPos := FindZeros(&input)
-  totalRating := 0
+	totalRating := 0
 
 	// For each trailhead (height 0 position), calculate its rating
 	for _, zero := range zeroPos {
